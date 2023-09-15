@@ -47,7 +47,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPost]
-    public ActionResult<VillaDto> CreateVilla([FromBody]VillaDto villaDto)
+    public ActionResult<VillaDto> CreateVilla([FromBody]VillaCreateDto villaDto)
     {
         // if (!ModelState.IsValid) return BadRequest(ModelState); // non necessario perchè già incluso nell'attributo [ApiController]  
         // custom validation
@@ -57,13 +57,12 @@ public class VillaApiController : ControllerBase
             return BadRequest(ModelState);
         }
         if (villaDto == null) return BadRequest();
-        if (villaDto.Id > 0) return StatusCode(StatusCodes.Status500InternalServerError);
+        //if (villaDto.Id > 0) return StatusCode(StatusCodes.Status500InternalServerError); // non più necessario visto che l'Id non c'è più nel modello
 
         Villa model = new()
         {
             Amenity = villaDto.Amenity,
             Details = villaDto.Details,
-            Id = villaDto.Id,
             ImageUrl = villaDto.ImageUrl,
             Name = villaDto.Name,
             Occupancy = villaDto.Occupancy,
@@ -74,7 +73,7 @@ public class VillaApiController : ControllerBase
         _db.Villas.Add(model);
         _db.SaveChanges();
         
-        return CreatedAtRoute("GetVilla", new { id = villaDto.Id }, villaDto); // ritorna il 201 con la route dell'oggetto negli headers (location)
+        return CreatedAtRoute("GetVilla", new { id = model.Id }, model); // ritorna il 201 con la route dell'oggetto negli headers (location)
         return Created("GetVilla", villaDto); // ritorna il classico 201
     }
 
@@ -94,7 +93,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPut("{id:int}", Name = "UpdateVilla")]
-    public IActionResult UpdateVilla(int id, [FromBody] VillaDto villaDto)
+    public IActionResult UpdateVilla(int id, [FromBody] VillaUpdateDto villaDto)
     {
         if (villaDto == null || id != villaDto.Id) return BadRequest();
 
@@ -117,7 +116,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
-    public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaDto> patchDto)
+    public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
     {
         if (patchDto == null || id == 0)
         {
@@ -130,7 +129,7 @@ public class VillaApiController : ControllerBase
             return NotFound();
         }
         
-        VillaDto villaDto = new()
+        VillaUpdateDto villaDto = new()
         {
             Amenity = villa.Amenity,
             Details = villa.Details,

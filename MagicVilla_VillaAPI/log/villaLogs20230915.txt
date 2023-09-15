@@ -271,3 +271,13 @@ WHERE "Id" = @p9;
 2023-09-15 09:52:57.046 +02:00 [DBG] Disposing connection to database 'Magic_Villa_API' on server ''.
 2023-09-15 09:52:57.046 +02:00 [DBG] Disposed connection to database 'Magic_Villa_API' on server '' (0ms).
 2023-09-15 09:52:57.046 +02:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5254/api/VillaApi/5 application/json-patch+json 87 - 204 - - 38.6837ms
+2023-09-15 09:54:03.911 +02:00 [DBG] Connection id "0HMTLO2J098DH" received FIN.
+2023-09-15 09:54:03.912 +02:00 [DBG] Connection id "0HMTLO2J098DH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:54:03.914 +02:00 [DBG] Connection id "0HMTLO2J098DH" disconnecting.
+2023-09-15 09:54:03.918 +02:00 [DBG] Connection id "0HMTLO2J098DH" stopped.
+2023-09-15 09:55:07.851 +02:00 [DBG] Connection id "0HMTLO2J098DG" disconnecting.
+2023-09-15 09:55:07.851 +02:00 [DBG] Connection id "0HMTLO2J098DG" stopped.
+2023-09-15 09:55:07.853 +02:00 [DBG] Connection id "0HMTLO2J098DG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 10:01:32.456 +02:00 [INF] Application is shutting down...
+2023-09-15 10:01:32.457 +02:00 [DBG] Hosting stopping
+2023-09-15 10:01:32.464 +02:00 [DBG] Hosting stopped
