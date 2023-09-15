@@ -23,15 +23,15 @@ public class VillaApiController : ControllerBase
     
     
     [HttpGet]
-    public ActionResult<IEnumerable<VillaDto>> GetVillas()
+    public async Task<ActionResult<IEnumerable<VillaDto>>> GetVillas()
     {
         _logger.LogInformation("Getting all villas");
-        return Ok( _db.Villas.ToList());
+        return Ok(await  _db.Villas.ToListAsync());
     }
     
     
     [HttpGet("{id:int}", Name = "GetVilla")]
-    public ActionResult<VillaDto> GetVilla(int id)
+    public async Task<ActionResult<VillaDto>> GetVilla(int id)
     {
         if (id == 0)
         {
@@ -39,7 +39,7 @@ public class VillaApiController : ControllerBase
             return BadRequest();
         }
 
-        var villa = _db.Villas.FirstOrDefault(v => v.Id == id);
+        var villa = await _db.Villas.FirstOrDefaultAsync(v => v.Id == id);
         if (villa == null) return NotFound();
         
         return Ok(villa);
@@ -47,11 +47,11 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPost]
-    public ActionResult<VillaDto> CreateVilla([FromBody]VillaCreateDto villaDto)
+    public async Task<ActionResult<VillaDto>> CreateVilla([FromBody]VillaCreateDto villaDto)
     {
         // if (!ModelState.IsValid) return BadRequest(ModelState); // non necessario perchè già incluso nell'attributo [ApiController]  
         // custom validation
-        if (_db.Villas.FirstOrDefault(v => v.Name.ToLower() == villaDto.Name.ToLower()) != null )
+        if (await _db.Villas.FirstOrDefaultAsync(v => v.Name.ToLower() == villaDto.Name.ToLower()) != null )
         {
             ModelState.AddModelError("CustomError", "Villa already exist");
             return BadRequest(ModelState);
@@ -70,8 +70,8 @@ public class VillaApiController : ControllerBase
             Sqft = villaDto.Sqft
         };
 
-        _db.Villas.Add(model);
-        _db.SaveChanges();
+        await _db.Villas.AddAsync(model);
+        await _db.SaveChangesAsync();
         
         return CreatedAtRoute("GetVilla", new { id = model.Id }, model); // ritorna il 201 con la route dell'oggetto negli headers (location)
         return Created("GetVilla", villaDto); // ritorna il classico 201
@@ -79,21 +79,21 @@ public class VillaApiController : ControllerBase
 
     
     [HttpDelete("{id:int}", Name = "DeleteVilla")]
-    public IActionResult DeleteVilla(int id)
+    public async Task<IActionResult> DeleteVilla(int id)
     {
         if (id == 0) return BadRequest();
 
-        var villa = _db.Villas.FirstOrDefault(v => v.Id == id);
+        var villa = await _db.Villas.FirstOrDefaultAsync(v => v.Id == id);
         if (villa == null) return NotFound();
 
         _db.Villas.Remove(villa);
-        _db.SaveChanges();
+        await _db.SaveChangesAsync();
         return NoContent();
     }
 
     
     [HttpPut("{id:int}", Name = "UpdateVilla")]
-    public IActionResult UpdateVilla(int id, [FromBody] VillaUpdateDto villaDto)
+    public async Task<IActionResult> UpdateVilla(int id, [FromBody] VillaUpdateDto villaDto)
     {
         if (villaDto == null || id != villaDto.Id) return BadRequest();
 
@@ -110,20 +110,20 @@ public class VillaApiController : ControllerBase
         };
 
         _db.Villas.Update(model);
-        _db.SaveChanges();
+        await _db.SaveChangesAsync();
         return NoContent();
     }
 
     
     [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
-    public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
+    public async Task<IActionResult> UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
     {
         if (patchDto == null || id == 0)
         {
             return BadRequest();
         }
 
-        var villa = _db.Villas.AsNoTracking().FirstOrDefault(v => v.Id == id); // AsNoTracking, la funzione traccia un Id alla volta, essendo che vogliamo modificate il model instanziato sotto, questa istanza non deve essere seguita dal compilatore
+        var villa = await _db.Villas.AsNoTracking().FirstOrDefaultAsync(v => v.Id == id); // AsNoTracking, la funzione traccia un Id alla volta, essendo che vogliamo modificate il model instanziato sotto, questa istanza non deve essere seguita dal compilatore
         if (villa == null)
         {
             return NotFound();
@@ -160,7 +160,7 @@ public class VillaApiController : ControllerBase
         };
 
         _db.Villas.Update(model);
-        _db.SaveChanges();
+        await _db.SaveChangesAsync();
 
         return NoContent();
     }
