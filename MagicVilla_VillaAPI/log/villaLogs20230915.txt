@@ -1,0 +1,273 @@
+2023-09-15 09:43:39.395 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-09-15 09:43:39.446 +02:00 [DBG] Hosting starting
+2023-09-15 09:43:39.469 +02:00 [INF] Now listening on: http://localhost:5254
+2023-09-15 09:43:39.469 +02:00 [DBG] Loaded hosting startup assembly MagicVilla_VillaAPI
+2023-09-15 09:43:39.469 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-15 09:43:39.469 +02:00 [INF] Hosting environment: Development
+2023-09-15 09:43:39.469 +02:00 [INF] Content root path: /Users/agostinodefelice/dev/dotnet/MagicVilla/MagicVilla_VillaAPI
+2023-09-15 09:43:39.469 +02:00 [DBG] Hosting started
+2023-09-15 09:43:39.970 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" received FIN.
+2023-09-15 09:43:39.976 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" accepted.
+2023-09-15 09:43:39.977 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" started.
+2023-09-15 09:43:39.983 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:43:39.989 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" disconnecting.
+2023-09-15 09:43:39.993 +02:00 [DBG] Connection id "0HMTLNTT64FQ5" stopped.
+2023-09-15 09:43:40.002 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" accepted.
+2023-09-15 09:43:40.002 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" started.
+2023-09-15 09:43:40.002 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" accepted.
+2023-09-15 09:43:40.002 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" started.
+2023-09-15 09:43:40.023 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/index.html - -
+2023-09-15 09:43:40.024 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-09-15 09:43:40.035 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-09-15 09:43:40.035 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:43:40.093 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" completed keep alive response.
+2023-09-15 09:43:40.097 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/index.html - - - 200 - text/html;charset=utf-8 75.1388ms
+2023-09-15 09:43:40.105 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui.css - -
+2023-09-15 09:43:40.105 +02:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2023-09-15 09:43:40.105 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:43:40.106 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" accepted.
+2023-09-15 09:43:40.106 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" started.
+2023-09-15 09:43:40.107 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui-standalone-preset.js - -
+2023-09-15 09:43:40.107 +02:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2023-09-15 09:43:40.107 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:43:40.107 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui-bundle.js - -
+2023-09-15 09:43:40.107 +02:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2023-09-15 09:43:40.107 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:43:40.117 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-09-15 09:43:40.117 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-09-15 09:43:40.119 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-09-15 09:43:40.119 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" completed keep alive response.
+2023-09-15 09:43:40.119 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" completed keep alive response.
+2023-09-15 09:43:40.119 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" completed keep alive response.
+2023-09-15 09:43:40.119 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 12.4743ms
+2023-09-15 09:43:40.119 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui.css - - - 200 144929 text/css 14.3755ms
+2023-09-15 09:43:40.119 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 12.3748ms
+2023-09-15 09:43:40.221 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - -
+2023-09-15 09:43:40.222 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-09-15 09:43:40.222 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:43:40.320 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" completed keep alive response.
+2023-09-15 09:43:40.320 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 98.6421ms
+2023-09-15 09:45:50.608 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" disconnecting.
+2023-09-15 09:45:50.609 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" disconnecting.
+2023-09-15 09:45:50.610 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" disconnecting.
+2023-09-15 09:45:50.611 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" stopped.
+2023-09-15 09:45:50.611 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" stopped.
+2023-09-15 09:45:50.611 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" stopped.
+2023-09-15 09:45:50.612 +02:00 [DBG] Connection id "0HMTLNTT64FQ7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:45:50.614 +02:00 [DBG] Connection id "0HMTLNTT64FQ6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:45:50.615 +02:00 [DBG] Connection id "0HMTLNTT64FQ8" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:52:00.932 +02:00 [INF] Application is shutting down...
+2023-09-15 09:52:00.933 +02:00 [DBG] Hosting stopping
+2023-09-15 09:52:00.939 +02:00 [DBG] Hosting stopped
+2023-09-15 09:52:02.597 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-09-15 09:52:02.647 +02:00 [DBG] Hosting starting
+2023-09-15 09:52:02.664 +02:00 [INF] Now listening on: http://localhost:5254
+2023-09-15 09:52:02.665 +02:00 [DBG] Loaded hosting startup assembly MagicVilla_VillaAPI
+2023-09-15 09:52:02.665 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-15 09:52:02.665 +02:00 [INF] Hosting environment: Development
+2023-09-15 09:52:02.665 +02:00 [INF] Content root path: /Users/agostinodefelice/dev/dotnet/MagicVilla/MagicVilla_VillaAPI
+2023-09-15 09:52:02.665 +02:00 [DBG] Hosting started
+2023-09-15 09:52:02.672 +02:00 [DBG] Connection id "0HMTLO2J098DF" received FIN.
+2023-09-15 09:52:02.674 +02:00 [DBG] Connection id "0HMTLO2J098DF" accepted.
+2023-09-15 09:52:02.675 +02:00 [DBG] Connection id "0HMTLO2J098DF" started.
+2023-09-15 09:52:02.679 +02:00 [DBG] Connection id "0HMTLO2J098DF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-15 09:52:02.684 +02:00 [DBG] Connection id "0HMTLO2J098DF" disconnecting.
+2023-09-15 09:52:02.687 +02:00 [DBG] Connection id "0HMTLO2J098DF" stopped.
+2023-09-15 09:52:02.704 +02:00 [DBG] Connection id "0HMTLO2J098DG" accepted.
+2023-09-15 09:52:02.704 +02:00 [DBG] Connection id "0HMTLO2J098DH" accepted.
+2023-09-15 09:52:02.705 +02:00 [DBG] Connection id "0HMTLO2J098DG" started.
+2023-09-15 09:52:02.706 +02:00 [DBG] Connection id "0HMTLO2J098DH" started.
+2023-09-15 09:52:02.722 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/index.html - -
+2023-09-15 09:52:02.723 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-09-15 09:52:02.734 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-09-15 09:52:02.734 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:52:02.796 +02:00 [DBG] Connection id "0HMTLO2J098DG" completed keep alive response.
+2023-09-15 09:52:02.797 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/index.html - - - 200 - text/html;charset=utf-8 75.7492ms
+2023-09-15 09:52:02.932 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - -
+2023-09-15 09:52:02.932 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-09-15 09:52:02.932 +02:00 [DBG] Request did not match any endpoints
+2023-09-15 09:52:03.020 +02:00 [DBG] Connection id "0HMTLO2J098DG" completed keep alive response.
+2023-09-15 09:52:03.020 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.8623ms
+2023-09-15 09:52:34.997 +02:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5254/api/VillaApi/5 application/json-patch+json 78
+2023-09-15 09:52:35.004 +02:00 [DBG] 1 candidate(s) found for the request path '/api/VillaApi/5'
+2023-09-15 09:52:35.007 +02:00 [DBG] Endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)' with route pattern 'api/VillaApi/{id:int}' is valid for the request path '/api/VillaApi/5'
+2023-09-15 09:52:35.008 +02:00 [DBG] Request matched endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:35.012 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-09-15 09:52:35.014 +02:00 [WRN] Failed to determine the https port for redirect.
+2023-09-15 09:52:35.017 +02:00 [INF] Executing endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:35.029 +02:00 [INF] Route matched with {action = "UpdatePartialVilla", controller = "VillaApi"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdatePartialVilla(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]) on controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI).
+2023-09-15 09:52:35.030 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-09-15 09:52:35.030 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-09-15 09:52:35.030 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-09-15 09:52:35.030 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-09-15 09:52:35.030 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-09-15 09:52:35.031 +02:00 [DBG] Executing controller factory for controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI)
+2023-09-15 09:52:35.114 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-09-15 09:52:35.125 +02:00 [DBG] Executed controller factory for controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI)
+2023-09-15 09:52:35.127 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2023-09-15 09:52:35.127 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2023-09-15 09:52:35.127 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:35.127 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:35.127 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2023-09-15 09:52:35.128 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:35.129 +02:00 [DBG] Attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' ...
+2023-09-15 09:52:35.129 +02:00 [DBG] Attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' using the name '' in request data ...
+2023-09-15 09:52:35.129 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json-patch+json'.
+2023-09-15 09:52:35.132 +02:00 [DBG] Connection id "0HMTLO2J098DG", Request id "0HMTLO2J098DG:00000003": started reading request body.
+2023-09-15 09:52:35.132 +02:00 [DBG] Connection id "0HMTLO2J098DG", Request id "0HMTLO2J098DG:00000003": done reading request body.
+2023-09-15 09:52:35.163 +02:00 [DBG] Done attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:35.163 +02:00 [DBG] Done attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:35.163 +02:00 [DBG] Attempting to validate the bound parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' ...
+2023-09-15 09:52:35.165 +02:00 [DBG] Done attempting to validate the bound parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:35.518 +02:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: None
+2023-09-15 09:52:35.539 +02:00 [DBG] Compiling query expression: 
+'DbSet<Villa>()
+    .AsNoTracking()
+    .FirstOrDefault(v => v.Id == __id_0)'
+2023-09-15 09:52:35.647 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Villa>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Villa.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Villa.Amenity (string) Required, 1], [Property: Villa.CreatedDate (DateTime) Required, 2], [Property: Villa.Details (string) Required, 3], [Property: Villa.ImageUrl (string) Required, 4], [Property: Villa.Name (string) Required, 5], [Property: Villa.Occupancy (int) Required, 6], [Property: Villa.Rate (double) Required, 7], [Property: Villa.Sqft (int) Required, 8], [Property: Villa.UpdatedDate (DateTime) Required, 9] }
+        SELECT TOP(1) v.Id, v.Amenity, v.CreatedDate, v.Details, v.ImageUrl, v.Name, v.Occupancy, v.Rate, v.Sqft, v.UpdatedDate
+        FROM Villas AS v
+        WHERE v.Id == @__id_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Villa>, 
+    MagicVilla_VillaAPI.Data.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2023-09-15 09:52:35.668 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-15 09:52:35.669 +02:00 [DBG] Creating DbConnection.
+2023-09-15 09:52:35.689 +02:00 [DBG] Created DbConnection. (18ms).
+2023-09-15 09:52:35.692 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (24ms).
+2023-09-15 09:52:35.695 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (29ms).
+2023-09-15 09:52:35.696 +02:00 [DBG] Opening connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:35.770 +02:00 [DBG] Opened connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.777 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."Amenity", v."CreatedDate", v."Details", v."ImageUrl", v."Name", v."Occupancy", v."Rate", v."Sqft", v."UpdatedDate"
+FROM "Villas" AS v
+WHERE v."Id" = @__id_0
+LIMIT 1
+2023-09-15 09:52:35.798 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."Amenity", v."CreatedDate", v."Details", v."ImageUrl", v."Name", v."Occupancy", v."Rate", v."Sqft", v."UpdatedDate"
+FROM "Villas" AS v
+WHERE v."Id" = @__id_0
+LIMIT 1
+2023-09-15 09:52:35.807 +02:00 [DBG] Closing data reader to 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.812 +02:00 [DBG] A data reader for 'Magic_Villa_API' on server 'tcp://localhost:5432' is being disposed after spending 9ms reading results.
+2023-09-15 09:52:35.814 +02:00 [DBG] Closing connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.816 +02:00 [DBG] Closed connection to database 'Magic_Villa_API' on server '' (2ms).
+2023-09-15 09:52:35.848 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'Villa' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-15 09:52:35.849 +02:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2023-09-15 09:52:35.850 +02:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2023-09-15 09:52:35.854 +02:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2023-09-15 09:52:35.883 +02:00 [DBG] Opening connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:35.883 +02:00 [DBG] Opened connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.884 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-15 09:52:35.884 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:35.884 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:35.885 +02:00 [DBG] Executing DbCommand [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Villas" SET "Amenity" = @p0, "CreatedDate" = @p1, "Details" = @p2, "ImageUrl" = @p3, "Name" = @p4, "Occupancy" = @p5, "Rate" = @p6, "Sqft" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9;
+2023-09-15 09:52:35.895 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Villas" SET "Amenity" = @p0, "CreatedDate" = @p1, "Details" = @p2, "ImageUrl" = @p3, "Name" = @p4, "Occupancy" = @p5, "Rate" = @p6, "Sqft" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9;
+2023-09-15 09:52:35.896 +02:00 [DBG] Closing data reader to 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.899 +02:00 [DBG] A data reader for 'Magic_Villa_API' on server 'tcp://localhost:5432' is being disposed after spending 4ms reading results.
+2023-09-15 09:52:35.899 +02:00 [DBG] Closing connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:35.899 +02:00 [DBG] Closed connection to database 'Magic_Villa_API' on server '' (0ms).
+2023-09-15 09:52:35.903 +02:00 [DBG] An entity of type 'Villa' tracked by 'ApplicationDbContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-15 09:52:35.904 +02:00 [DBG] SaveChanges completed for 'ApplicationDbContext' with 1 entities written to the database.
+2023-09-15 09:52:35.904 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-15 09:52:35.906 +02:00 [INF] Executed action MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI) in 873.6596ms
+2023-09-15 09:52:35.906 +02:00 [INF] Executed endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:35.906 +02:00 [DBG] Connection id "0HMTLO2J098DG" completed keep alive response.
+2023-09-15 09:52:35.907 +02:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-15 09:52:35.908 +02:00 [DBG] Disposing connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:35.910 +02:00 [DBG] Disposed connection to database 'Magic_Villa_API' on server '' (1ms).
+2023-09-15 09:52:35.910 +02:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5254/api/VillaApi/5 application/json-patch+json 78 - 204 - - 913.6677ms
+2023-09-15 09:52:57.008 +02:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5254/api/VillaApi/5 application/json-patch+json 87
+2023-09-15 09:52:57.008 +02:00 [DBG] 1 candidate(s) found for the request path '/api/VillaApi/5'
+2023-09-15 09:52:57.008 +02:00 [DBG] Endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)' with route pattern 'api/VillaApi/{id:int}' is valid for the request path '/api/VillaApi/5'
+2023-09-15 09:52:57.008 +02:00 [DBG] Request matched endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:57.008 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-09-15 09:52:57.009 +02:00 [INF] Executing endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:57.009 +02:00 [INF] Route matched with {action = "UpdatePartialVilla", controller = "VillaApi"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdatePartialVilla(Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]) on controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI).
+2023-09-15 09:52:57.009 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-09-15 09:52:57.009 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-09-15 09:52:57.009 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-09-15 09:52:57.009 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-09-15 09:52:57.009 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-09-15 09:52:57.009 +02:00 [DBG] Executing controller factory for controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI)
+2023-09-15 09:52:57.011 +02:00 [DBG] Executed controller factory for controller MagicVilla_VillaAPI.Controllers.VillaApiController (MagicVilla_VillaAPI)
+2023-09-15 09:52:57.011 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2023-09-15 09:52:57.012 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2023-09-15 09:52:57.012 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:57.012 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:57.012 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2023-09-15 09:52:57.012 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2023-09-15 09:52:57.012 +02:00 [DBG] Attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' ...
+2023-09-15 09:52:57.012 +02:00 [DBG] Attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' using the name '' in request data ...
+2023-09-15 09:52:57.012 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json-patch+json'.
+2023-09-15 09:52:57.013 +02:00 [DBG] Connection id "0HMTLO2J098DG", Request id "0HMTLO2J098DG:00000004": started reading request body.
+2023-09-15 09:52:57.013 +02:00 [DBG] Connection id "0HMTLO2J098DG", Request id "0HMTLO2J098DG:00000004": done reading request body.
+2023-09-15 09:52:57.014 +02:00 [DBG] Done attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:57.014 +02:00 [DBG] Done attempting to bind parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:57.014 +02:00 [DBG] Attempting to validate the bound parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]' ...
+2023-09-15 09:52:57.014 +02:00 [DBG] Done attempting to validate the bound parameter 'patchDto' of type 'Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[MagicVilla_VillaAPI.Models.Dto.VillaDto]'.
+2023-09-15 09:52:57.038 +02:00 [DBG] Entity Framework Core 7.0.11 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: None
+2023-09-15 09:52:57.040 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-15 09:52:57.040 +02:00 [DBG] Creating DbConnection.
+2023-09-15 09:52:57.040 +02:00 [DBG] Created DbConnection. (0ms).
+2023-09-15 09:52:57.040 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:57.041 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:57.041 +02:00 [DBG] Opening connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:57.041 +02:00 [DBG] Opened connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.041 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."Amenity", v."CreatedDate", v."Details", v."ImageUrl", v."Name", v."Occupancy", v."Rate", v."Sqft", v."UpdatedDate"
+FROM "Villas" AS v
+WHERE v."Id" = @__id_0
+LIMIT 1
+2023-09-15 09:52:57.043 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."Amenity", v."CreatedDate", v."Details", v."ImageUrl", v."Name", v."Occupancy", v."Rate", v."Sqft", v."UpdatedDate"
+FROM "Villas" AS v
+WHERE v."Id" = @__id_0
+LIMIT 1
+2023-09-15 09:52:57.043 +02:00 [DBG] Closing data reader to 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.043 +02:00 [DBG] A data reader for 'Magic_Villa_API' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2023-09-15 09:52:57.043 +02:00 [DBG] Closing connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.043 +02:00 [DBG] Closed connection to database 'Magic_Villa_API' on server '' (0ms).
+2023-09-15 09:52:57.043 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'Villa' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-15 09:52:57.043 +02:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2023-09-15 09:52:57.043 +02:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2023-09-15 09:52:57.044 +02:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2023-09-15 09:52:57.044 +02:00 [DBG] Opening connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:57.044 +02:00 [DBG] Opened connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.044 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-09-15 09:52:57.044 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:57.044 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-09-15 09:52:57.044 +02:00 [DBG] Executing DbCommand [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Villas" SET "Amenity" = @p0, "CreatedDate" = @p1, "Details" = @p2, "ImageUrl" = @p3, "Name" = @p4, "Occupancy" = @p5, "Rate" = @p6, "Sqft" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9;
+2023-09-15 09:52:57.045 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Villas" SET "Amenity" = @p0, "CreatedDate" = @p1, "Details" = @p2, "ImageUrl" = @p3, "Name" = @p4, "Occupancy" = @p5, "Rate" = @p6, "Sqft" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9;
+2023-09-15 09:52:57.045 +02:00 [DBG] Closing data reader to 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.045 +02:00 [DBG] A data reader for 'Magic_Villa_API' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2023-09-15 09:52:57.045 +02:00 [DBG] Closing connection to database 'Magic_Villa_API' on server 'tcp://localhost:5432'.
+2023-09-15 09:52:57.045 +02:00 [DBG] Closed connection to database 'Magic_Villa_API' on server '' (0ms).
+2023-09-15 09:52:57.045 +02:00 [DBG] An entity of type 'Villa' tracked by 'ApplicationDbContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-09-15 09:52:57.045 +02:00 [DBG] SaveChanges completed for 'ApplicationDbContext' with 1 entities written to the database.
+2023-09-15 09:52:57.046 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-15 09:52:57.046 +02:00 [INF] Executed action MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI) in 36.247ms
+2023-09-15 09:52:57.046 +02:00 [INF] Executed endpoint 'MagicVilla_VillaAPI.Controllers.VillaApiController.UpdatePartialVilla (MagicVilla_VillaAPI)'
+2023-09-15 09:52:57.046 +02:00 [DBG] Connection id "0HMTLO2J098DG" completed keep alive response.
+2023-09-15 09:52:57.046 +02:00 [DBG] 'ApplicationDbContext' disposed.
+2023-09-15 09:52:57.046 +02:00 [DBG] Disposing connection to database 'Magic_Villa_API' on server ''.
+2023-09-15 09:52:57.046 +02:00 [DBG] Disposed connection to database 'Magic_Villa_API' on server '' (0ms).
+2023-09-15 09:52:57.046 +02:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5254/api/VillaApi/5 application/json-patch+json 87 - 204 - - 38.6837ms
