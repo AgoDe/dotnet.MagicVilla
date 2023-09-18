@@ -11,6 +11,7 @@ public class ApplicationDbContext: DbContext
     }
     
     public DbSet<Villa> Villas { set; get; }
+    public DbSet<VillaNumber> VillaNumbers { set; get; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
