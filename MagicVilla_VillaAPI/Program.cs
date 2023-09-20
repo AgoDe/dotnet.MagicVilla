@@ -4,6 +4,7 @@ using MagicVilla_VillaAPI.Repository;
 using MagicVilla_VillaAPI.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using static System.AppContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
+SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
@@ -33,6 +35,7 @@ builder.Services.AddSwaggerGen().AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddControllers().AddNewtonsoftJson();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
