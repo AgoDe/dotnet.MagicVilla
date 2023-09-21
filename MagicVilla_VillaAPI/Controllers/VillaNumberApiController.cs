@@ -36,7 +36,7 @@ public class VillaNumberApiController : ControllerBase
         try
         {
             _logger.LogInformation("Getting all villas");
-            IEnumerable<VillaNumber> villaNumberList = await _dbVillaNumber.GetAll();
+            IEnumerable<VillaNumber> villaNumberList = await _dbVillaNumber.GetAll(includeProperties:"Villa");
             _response.Result = _mapper.Map<List<VillaNumberDto>>(villaNumberList);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
@@ -62,7 +62,7 @@ public class VillaNumberApiController : ControllerBase
                 return BadRequest(_response);
             }
 
-            var model = await _dbVillaNumber.Get(v => v.VillaNo == id);
+            var model = await _dbVillaNumber.Get(v => v.VillaNo == id, includeProperties:"Villa");
             if (model == null)
             {
                 _response.StatusCode = HttpStatusCode.NotFound;

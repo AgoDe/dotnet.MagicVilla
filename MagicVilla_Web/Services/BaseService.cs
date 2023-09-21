@@ -11,9 +11,11 @@ public class BaseService : IBaseService
 {
     public ApiResponse responseModel { get; set; }
     public IHttpClientFactory httpClient { get; set; }
+    protected String Uri;
 
-    public BaseService(IHttpClientFactory httpClient)
+    public BaseService(IHttpClientFactory httpClient, IConfiguration configuration)
     {
+        this.Uri = configuration.GetValue<string>("ServiceUrls:VillaAPI");
         this.responseModel = new();
         this.httpClient = httpClient;
     }

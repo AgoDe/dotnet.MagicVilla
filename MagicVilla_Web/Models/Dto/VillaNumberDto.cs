@@ -9,5 +9,6 @@ public class VillaNumberDto
     [Required]
     public int VillaId { get; set; }
     public string SpecialDetails { get; set; }
+    public VillaDto Villa { get; set; }
 
 }
