@@ -31,8 +31,7 @@ public class VillaController : Controller
         }
 
         return View(list);
-
-
+        
     }
 
     // GET
