@@ -58,9 +58,9 @@ public class VillaController : Controller
     }
     
     // GET
-    public async Task<IActionResult> Update(int villaId)
+    public async Task<IActionResult> Update(int id)
     {
-        var response = await _villaService.Get<ApiResponse>(villaId);
+        var response = await _villaService.Get<ApiResponse>(id);
         if (response != null && response.IsSuccess)
         {
             VillaDto model = JsonConvert.DeserializeObject<VillaDto>(Convert.ToString(response.Result));
@@ -88,9 +88,9 @@ public class VillaController : Controller
     }
     
     // GET
-    public async Task<IActionResult> Delete(int villaId)
+    public async Task<IActionResult> Delete(int id)
     {
-        var response = await _villaService.Get<ApiResponse>(villaId);
+        var response = await _villaService.Get<ApiResponse>(id);
         if (response != null && response.IsSuccess)
         {
             VillaDto model = JsonConvert.DeserializeObject<VillaDto>(Convert.ToString(response.Result));
