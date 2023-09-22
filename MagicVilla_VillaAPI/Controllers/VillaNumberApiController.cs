@@ -92,13 +92,13 @@ public class VillaNumberApiController : ControllerBase
             // custom validation
             if (await _dbVillaNumber.Get(v => v.VillaNo == createDto.VillaNo) != null )
             {
-                ModelState.AddModelError("CustomError", "Villa Number already exist");
+                ModelState.AddModelError("ErrorMessages", "Villa Number already exist");
                 return BadRequest(ModelState);
             }
 
             if (await _dbVilla.Get(m => m.Id == createDto.VillaId) == null )
             {
-                ModelState.AddModelError("CustomError", "Villa ID is Invalid");
+                ModelState.AddModelError("ErrorMessages", "Villa ID is Invalid");
                 return BadRequest(ModelState);
             }
             
@@ -170,7 +170,7 @@ public class VillaNumberApiController : ControllerBase
             }
             if (await _dbVilla.Get(m => m.Id == updateDto.VillaId) == null )
             {
-                ModelState.AddModelError("CustomError", "Villa ID is Invalid");
+                ModelState.AddModelError("ErrorMessages", "Villa ID is Invalid");
                 return BadRequest(ModelState);
             }
 

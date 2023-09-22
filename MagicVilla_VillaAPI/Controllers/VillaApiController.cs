@@ -91,7 +91,7 @@ public class VillaApiController : ControllerBase
             // custom validation
             if (await _dbVilla.Get(v => v.Name.ToLower() == createDto.Name.ToLower()) != null )
             {
-                ModelState.AddModelError("CustomError", "Villa already exist");
+                ModelState.AddModelError("errorMessages", "Villa already exist");
                 return BadRequest(ModelState);
             }
 

@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using System.Text.Json.Serialization;
 using MagicVilla_Utility;
@@ -54,8 +55,29 @@ public class BaseService : IBaseService
 
             apiResponse = await client.SendAsync(message);
             var apiContent = await apiResponse.Content.ReadAsStringAsync();
+
+            // TODO: pezzo da rivedere... non ne capisco il senso
+            try
+            {
+                ApiResponse response =  JsonConvert.DeserializeObject<ApiResponse>(apiContent);
+                if (apiResponse.StatusCode == HttpStatusCode.BadRequest || apiResponse.StatusCode == HttpStatusCode.NotFound )
+                {
+                    response.StatusCode = HttpStatusCode.BadRequest;
+                    response.IsSuccess = false;
+                    var res = JsonConvert.SerializeObject(response);
+                    var returnObj = JsonConvert.DeserializeObject<T>(res);
+                    return returnObj;
+                }
+            }
+            catch (Exception e)
+            {
+                var ExceptionResponse = JsonConvert.DeserializeObject<T>(apiContent);
+                return ExceptionResponse;
+            }
+
             var APIResponse = JsonConvert.DeserializeObject<T>(apiContent);
             return APIResponse;
+
         }
         catch (Exception e)
         {

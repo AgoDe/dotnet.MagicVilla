@@ -2,8 +2,10 @@ using System.Collections.Specialized;
 using AutoMapper;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
+using MagicVilla_Web.Models.VM;
 using MagicVilla_Web.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 
 namespace MagicVilla_Web.Controllers;
@@ -11,11 +13,13 @@ namespace MagicVilla_Web.Controllers;
 public class VillaNumberController : Controller
 {
     private readonly IVillaNumberService _villaNumberService;
+    private readonly IVillaService _villaService;
     private readonly IMapper _mapper;
 
-    public VillaNumberController(IVillaNumberService villaNumberService, IMapper mapper)
+    public VillaNumberController(IVillaNumberService villaNumberService, IMapper mapper, IVillaService villaService)
     {
         _villaNumberService = villaNumberService;
+        _villaService = villaService;
         _mapper = mapper;
     }
     
@@ -38,22 +42,52 @@ public class VillaNumberController : Controller
     // GET
     public async Task<IActionResult> Create()
     {
-        return View();
+        VillaNumberCreateVM villaNumberVM = new();
+
+        var response = await _villaService.GetAll<ApiResponse>();
+        if (response != null && response.IsSuccess)
+        {
+            villaNumberVM.VillaList = JsonConvert.DeserializeObject<List<VillaDto>>(Convert.ToString(response.Result))
+                .Select(i => new SelectListItem
+                    {
+                        Text = i.Name,
+                        Value = i.Id.ToString(),
+                    });
+        }
+        return View(villaNumberVM);
     }
     
     // POST
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(VillaNumberCreateDto model)
+    public async Task<IActionResult> Create(VillaNumberCreateVM model)
     {
         if (ModelState.IsValid)
         {
-            var response = await _villaNumberService.Create<ApiResponse>(model);
+            var response = await _villaNumberService.Create<ApiResponse>(model.VillaNumber);
             if (response != null && response.IsSuccess)
             {
                 return RedirectToAction(nameof(Index));
             }
+            else
+            {
+                if (response.ErrorMessages.Count > 0)
+                {
+                    ModelState.AddModelError("errorMessages", response.ErrorMessages.FirstOrDefault());
+                }
+            }
 
+        }
+        
+        var res = await _villaService.GetAll<ApiResponse>();
+        if (res != null && res.IsSuccess)
+        {
+            model.VillaList = JsonConvert.DeserializeObject<List<VillaDto>>(Convert.ToString(res.Result))
+                .Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString(),
+                });
         }
         return View(model);
     }
