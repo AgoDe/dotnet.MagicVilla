@@ -67,6 +67,7 @@ public class VillaNumberController : Controller
             var response = await _villaNumberService.Create<ApiResponse>(model.VillaNumber);
             if (response != null && response.IsSuccess)
             {
+                TempData["success"] = "Villa Number created successfully";
                 return RedirectToAction(nameof(Index));
             }
             else
@@ -89,6 +90,8 @@ public class VillaNumberController : Controller
                     Value = i.Id.ToString(),
                 });
         }
+        TempData["error"] = "Error encountered";
+
         return View(model);
     }
     
@@ -113,6 +116,8 @@ public class VillaNumberController : Controller
                         Value = i.Id.ToString(),
                     });
             }
+            TempData["error"] = "Error encountered";
+
             return View(villaNumberVM);
         }
 
@@ -129,6 +134,8 @@ public class VillaNumberController : Controller
             var response = await _villaNumberService.Update<ApiResponse>(model.VillaNumber);
             if (response != null && response.IsSuccess)
             {
+                TempData["success"] = "Villa Number updated successfully";
+
                 return RedirectToAction(nameof(Index));
             }
             else
@@ -188,6 +195,7 @@ public class VillaNumberController : Controller
         var response = await _villaNumberService.Delete<ApiResponse>(model.VillaNumber.VillaNo);
         if (response != null && response.IsSuccess)
         {
+            TempData["success"] = "Villa Number deleted successfully";
             return RedirectToAction(nameof(Index));
         }
         
@@ -201,6 +209,8 @@ public class VillaNumberController : Controller
                     Value = i.Id.ToString(),
                 });
         }
+        TempData["error"] = "Error encountered";
+
         return View(model);
     }
 }

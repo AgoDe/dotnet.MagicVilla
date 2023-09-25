@@ -50,10 +50,12 @@ public class VillaController : Controller
             var response = await _villaService.Create<ApiResponse>(model);
             if (response != null && response.IsSuccess)
             {
+                TempData["success"] = "Villa created successfully";
                 return RedirectToAction(nameof(Index));
             }
 
         }
+        TempData["error"] = "Error encountered";
         return View(model);
     }
     
@@ -80,10 +82,12 @@ public class VillaController : Controller
             var response = await _villaService.Update<ApiResponse>(model);
             if (response != null && response.IsSuccess)
             {
+                TempData["success"] = "Villa updated successfully";
                 return RedirectToAction(nameof(Index));
             }
 
         }
+        TempData["error"] = "Error encountered";
         return View(model);
     }
     
@@ -108,9 +112,11 @@ public class VillaController : Controller
         var response = await _villaService.Delete<ApiResponse>(model.Id);
         if (response != null && response.IsSuccess)
         {
+            TempData["success"] = "Villa deleted successfully";
             return RedirectToAction(nameof(Index));
         }
-        
+
+        TempData["error"] = "Error encountered";
         return View(model);
     }
 }
