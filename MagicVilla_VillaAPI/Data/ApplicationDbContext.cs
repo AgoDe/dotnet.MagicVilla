@@ -10,6 +10,7 @@ public class ApplicationDbContext: DbContext
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
     
+    public DbSet<LocalUser> LocalUsers { get; set; }
     public DbSet<Villa> Villas { set; get; }
     public DbSet<VillaNumber> VillaNumbers { set; get; }
 

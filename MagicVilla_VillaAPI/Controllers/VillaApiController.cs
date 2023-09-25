@@ -4,6 +4,7 @@ using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Models;
 using MagicVilla_VillaAPI.Models.Dto;
 using MagicVilla_VillaAPI.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,7 @@ public class VillaApiController : ControllerBase
     
     
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> GetVillas()
     {
         try
@@ -84,6 +86,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> CreateVilla([FromBody]VillaCreateDto createDto)
     {
         try
@@ -121,6 +124,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpDelete("{id:int}", Name = "DeleteVilla")]
+    [Authorize(Roles = "admin")]
     public async Task<ActionResult<ApiResponse>> DeleteVilla(int id)
     {
         try
@@ -157,6 +161,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPut("{id:int}", Name = "UpdateVilla")]
+    [Authorize]
     public async Task<ActionResult<ApiResponse>> UpdateVilla(int id, [FromBody] VillaUpdateDto updateDto)
     {
         try {
@@ -186,6 +191,7 @@ public class VillaApiController : ControllerBase
 
     
     [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
+    [Authorize]
     public async Task<IActionResult> UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
     {
         if (patchDto == null || id == 0)
