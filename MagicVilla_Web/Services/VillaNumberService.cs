@@ -35,32 +35,35 @@ public class VillaNumberService : BaseService, IVillaNumberService
     }
     
 
-    public Task<T> Create<T>(VillaNumberCreateDto dto)
+    public Task<T> Create<T>(VillaNumberCreateDto dto, string token)
     {
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = SD.ApiType.POST,
             Data = dto,
-            Url = _villaNumberUrl
+            Url = _villaNumberUrl,
+            Token = token
         });
     }
 
-    public Task<T> Update<T>(VillaNumberUpdateDto dto)
+    public Task<T> Update<T>(VillaNumberUpdateDto dto, string token)
     {
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = SD.ApiType.PUT,
             Data = dto,
-            Url = _villaNumberUrl + $"/{dto.VillaNo}"
+            Url = _villaNumberUrl + $"/{dto.VillaNo}",
+            Token = token
         });
     }
 
-    public Task<T> Delete<T>(int id)
+    public Task<T> Delete<T>(int id, string token)
     {
         return SendAsync<T>(new ApiRequest()
         {
             ApiType = SD.ApiType.DELETE,
-            Url = _villaNumberUrl + $"/{id}"
+            Url = _villaNumberUrl + $"/{id}",
+            Token = token
         });
     }
 }

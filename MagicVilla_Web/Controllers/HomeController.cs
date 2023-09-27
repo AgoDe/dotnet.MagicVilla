@@ -20,6 +20,7 @@ public class HomeController : Controller
     }
     
     // GET
+    [HttpGet(Name = "Index")]
     public async Task<IActionResult> Index()
     {
         List<VillaDto> list = new();

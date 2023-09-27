@@ -1,9 +1,11 @@
 using System.Collections.Specialized;
 using AutoMapper;
+using MagicVilla_Utility;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Models.VM;
 using MagicVilla_Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -15,7 +17,7 @@ public class VillaNumberController : Controller
     private readonly IVillaNumberService _villaNumberService;
     private readonly IVillaService _villaService;
     private readonly IMapper _mapper;
-
+   
     public VillaNumberController(IVillaNumberService villaNumberService, IMapper mapper, IVillaService villaService)
     {
         _villaNumberService = villaNumberService;
@@ -40,6 +42,7 @@ public class VillaNumberController : Controller
     }
 
     // GET
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> Create()
     {
         VillaNumberCreateVM villaNumberVM = new();
@@ -59,12 +62,13 @@ public class VillaNumberController : Controller
     
     // POST
     [HttpPost]
+    [Authorize(Roles = "admin")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(VillaNumberCreateVM model)
     {
         if (ModelState.IsValid)
         {
-            var response = await _villaNumberService.Create<ApiResponse>(model.VillaNumber);
+            var response = await _villaNumberService.Create<ApiResponse>(model.VillaNumber, HttpContext.Session.GetString(SD.SessionToken));
             if (response != null && response.IsSuccess)
             {
                 TempData["success"] = "Villa Number created successfully";
@@ -96,6 +100,7 @@ public class VillaNumberController : Controller
     }
     
     // GET
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> Update(int villaNo)
     {
         Console.WriteLine(villaNo);
@@ -124,14 +129,15 @@ public class VillaNumberController : Controller
         return NotFound();
     }
     
-    // PUT 
+    // POST
     [HttpPost]
+    [Authorize(Roles = "admin")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(VillaNumberUpdateVM model)
     {
         if (ModelState.IsValid)
         {
-            var response = await _villaNumberService.Update<ApiResponse>(model.VillaNumber);
+            var response = await _villaNumberService.Update<ApiResponse>(model.VillaNumber, HttpContext.Session.GetString(SD.SessionToken));
             if (response != null && response.IsSuccess)
             {
                 TempData["success"] = "Villa Number updated successfully";
@@ -161,7 +167,7 @@ public class VillaNumberController : Controller
     }
     
     // GET
-    
+    [Authorize(Roles = "admin")]
     public async Task<IActionResult> Delete(int villaNo)
     {
         VillaNumberDeleteVM villaNumberVM = new();
@@ -186,13 +192,15 @@ public class VillaNumberController : Controller
 
         return NotFound();
     }
+    
     // DELETE 
     [HttpPost]
+    [Authorize(Roles = "admin")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Delete(VillaNumberDeleteVM model)
     {
        
-        var response = await _villaNumberService.Delete<ApiResponse>(model.VillaNumber.VillaNo);
+        var response = await _villaNumberService.Delete<ApiResponse>(model.VillaNumber.VillaNo, HttpContext.Session.GetString(SD.SessionToken));
         if (response != null && response.IsSuccess)
         {
             TempData["success"] = "Villa Number deleted successfully";

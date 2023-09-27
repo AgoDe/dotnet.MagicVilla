@@ -30,7 +30,6 @@ public class VillaApiController : ControllerBase
     
     
     [HttpGet]
-    [Authorize]
     public async Task<ActionResult<ApiResponse>> GetVillas()
     {
         try

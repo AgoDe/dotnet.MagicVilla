@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers;
 
-[Microsoft.AspNetCore.Components.Route("api/UsersAuth")]
+[Route("api/UsersAuth")]
 [ApiController]
 public class UsersController : Controller
 {

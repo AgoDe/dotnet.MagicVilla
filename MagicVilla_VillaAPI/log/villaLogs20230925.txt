@@ -3298,3 +3298,11 @@ FROM "Villas" AS v
 2023-09-25 12:09:42.882 +02:00 [DBG] Disposing connection to database 'Magic_Villa_API' on server ''.
 2023-09-25 12:09:42.885 +02:00 [DBG] Disposed connection to database 'Magic_Villa_API' on server '' (2ms).
 2023-09-25 12:09:42.885 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7001/api/VillaApi - - - 200 1813 application/json;+charset=utf-8 1170.2627ms
+2023-09-25 12:10:59.460 +02:00 [DBG] Connection id "0HMTTLTVKNQV1" received FIN.
+2023-09-25 12:10:59.460 +02:00 [DBG] Connection id "0HMTTLTVKNQV0" received FIN.
+2023-09-25 12:10:59.461 +02:00 [DBG] Connection id "0HMTTLTVKNQV1" disconnecting.
+2023-09-25 12:10:59.464 +02:00 [DBG] Connection id "0HMTTLTVKNQV1" stopped.
+2023-09-25 12:10:59.465 +02:00 [DBG] Connection id "0HMTTLTVKNQV0" disconnecting.
+2023-09-25 12:10:59.465 +02:00 [DBG] Connection id "0HMTTLTVKNQV0" stopped.
+2023-09-25 12:10:59.465 +02:00 [DBG] Connection id "0HMTTLTVKNQV1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-09-25 12:10:59.466 +02:00 [DBG] Connection id "0HMTTLTVKNQV0" sending FIN because: "The Socket transport's send loop completed gracefully."

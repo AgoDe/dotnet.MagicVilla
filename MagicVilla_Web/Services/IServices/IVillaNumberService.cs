@@ -6,8 +6,8 @@ public interface IVillaNumberService
 {
     Task<T> GetAll<T>();
     Task<T> Get<T>(int id);
-    Task<T> Create<T>(VillaNumberCreateDto dto);
-    Task<T> Update<T>(VillaNumberUpdateDto dto);
-    Task<T> Delete<T>(int id);
+    Task<T> Create<T>(VillaNumberCreateDto dto, string token);
+    Task<T> Update<T>(VillaNumberUpdateDto dto, string token);
+    Task<T> Delete<T>(int id, string token);
     
 }
