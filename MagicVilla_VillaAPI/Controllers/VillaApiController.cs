@@ -11,8 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI.Controllers;
 
-[Route("api/[controller]")] // definisce il nome della rotta
+[Route("api/v{version:apiVersion}/[controller]")] // definisce il nome della rotta
 [ApiController]
+[ApiVersion("1.0")]
+[ApiVersion("2.0")]
 public class VillaApiController : ControllerBase
 {
     protected ApiResponse _response;
@@ -27,9 +29,16 @@ public class VillaApiController : ControllerBase
         _mapper = mapper;
         this._response = new();
     }
-    
+
+    [HttpGet]
+    [MapToApiVersion("2.0")]
+    public IEnumerable<string> Get()
+    {
+        return new string[] { "value1", "value2" };
+    }
     
     [HttpGet]
+    [MapToApiVersion("1.0")]
     public async Task<ActionResult<ApiResponse>> GetVillas()
     {
         try
