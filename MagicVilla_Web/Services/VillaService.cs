@@ -13,7 +13,7 @@ public class VillaService : BaseService, IVillaService
     public VillaService(IHttpClientFactory clientFactory, IConfiguration configuration) : base(clientFactory, configuration)
     {
         _clientFactory = clientFactory;
-        _villaUrl = Uri + "/api/villaApi";
+        _villaUrl = Uri + "/api/v1/villaApi";
     }
 
     public Task<T> GetAll<T>()

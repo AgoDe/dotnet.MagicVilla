@@ -9,12 +9,11 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace MagicVilla_VillaAPI.Controllers;
+namespace MagicVilla_VillaAPI.Controllers.v1;
 
 [Route("api/v{version:apiVersion}/[controller]")] // definisce il nome della rotta
 [ApiController]
 [ApiVersion("1.0")]
-[ApiVersion("2.0")]
 public class VillaApiController : ControllerBase
 {
     protected ApiResponse _response;
@@ -22,7 +21,7 @@ public class VillaApiController : ControllerBase
     private readonly IMapper _mapper;
     private readonly IVillaRepository _dbVilla;
 
-    public VillaApiController(IVillaRepository dbVilla, ILogger<VillaApiController> logger, IMapper mapper)
+    public VillaApiController (IVillaRepository dbVilla, ILogger<VillaApiController> logger, IMapper mapper)
     {
         _dbVilla = dbVilla;
         _logger = logger;
@@ -30,15 +29,9 @@ public class VillaApiController : ControllerBase
         this._response = new();
     }
 
-    [HttpGet]
-    [MapToApiVersion("2.0")]
-    public IEnumerable<string> Get()
-    {
-        return new string[] { "value1", "value2" };
-    }
+   
     
     [HttpGet]
-    [MapToApiVersion("1.0")]
     public async Task<ActionResult<ApiResponse>> GetVillas()
     {
         try

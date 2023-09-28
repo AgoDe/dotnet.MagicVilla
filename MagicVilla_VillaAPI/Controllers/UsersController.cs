@@ -8,6 +8,7 @@ namespace MagicVilla_VillaAPI.Controllers;
 
 [Route("api/UsersAuth")]
 [ApiController]
+[ApiVersionNeutral] // per escludere il controller dal versionamento
 public class UsersController : Controller
 {
     private readonly IUserRepository _userRepo;

@@ -12,6 +12,7 @@ namespace MagicVilla_VillaAPI.Controllers;
 
 [Route("api/[controller]")] // definisce il nome della rotta
 [ApiController]
+[ApiVersionNeutral]
 public class VillaNumberApiController : ControllerBase
 {
     protected ApiResponse _response;
