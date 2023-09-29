@@ -33,12 +33,31 @@ public class VillaApiController : ControllerBase
     
     [HttpGet]
     [ResponseCache(CacheProfileName = "Default30")]
-    public async Task<ActionResult<ApiResponse>> GetVillas()
+    public async Task<ActionResult<ApiResponse>> GetVillas([FromQuery(Name = "Search")] string? search)
     {
         try
         {
             _logger.LogInformation("Getting all villas");
-            IEnumerable<Villa> villaList = await _dbVilla.GetAll();
+            
+            IEnumerable<Villa> villaList;
+            // filtro passando i filtri al database
+            // if (!string.IsNullOrEmpty(search))
+            // {
+            //     villaList = await _dbVilla.GetAll(q => q.Name.ToLower().Contains(search));
+            // }
+            // else
+            // {
+            //     villaList = await _dbVilla.GetAll();
+            // }
+            
+            // filtro facendo la chiamata completa e poi filtrando i dati in cache 
+            villaList = await _dbVilla.GetAll();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                villaList = villaList.Where(q => q.Name.ToLower().Contains(search));
+            }
+            
             _response.Result = _mapper.Map<List<VillaDto>>(villaList);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
