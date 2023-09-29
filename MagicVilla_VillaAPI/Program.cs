@@ -28,6 +28,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+
+// setting della cache
+builder.Services.AddResponseCaching();
+// setting del versionamento
 builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;

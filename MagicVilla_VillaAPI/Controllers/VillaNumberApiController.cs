@@ -32,6 +32,8 @@ public class VillaNumberApiController : ControllerBase
     
     
     [HttpGet]
+    [ResponseCache(Duration = 30)]
+    //[ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)] // per non salvare l'azione in cache (tipo per gli errori)
     public async Task<ActionResult<ApiResponse>> GetVillaNumbers()
     {
         try
@@ -53,6 +55,7 @@ public class VillaNumberApiController : ControllerBase
     
     
     [HttpGet("{id:int}", Name = "GetVillaNumber")]
+    [ResponseCache(Duration = 30)]
     public async Task<ActionResult<ApiResponse>> GetVillaNumber(int id)
     {
         try {
