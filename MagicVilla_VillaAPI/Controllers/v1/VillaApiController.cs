@@ -32,7 +32,7 @@ public class VillaApiController : ControllerBase
    
     
     [HttpGet]
-    [ResponseCache(Duration = 30)]
+    [ResponseCache(CacheProfileName = "Default30")]
     public async Task<ActionResult<ApiResponse>> GetVillas()
     {
         try
@@ -54,7 +54,7 @@ public class VillaApiController : ControllerBase
     
     
     [HttpGet("{id:int}", Name = "GetVilla")]
-    [ResponseCache(Duration = 30)]
+    [ResponseCache(CacheProfileName = "Default30")]
     public async Task<ActionResult<ApiResponse>> GetVilla(int id)
     {
         try {
