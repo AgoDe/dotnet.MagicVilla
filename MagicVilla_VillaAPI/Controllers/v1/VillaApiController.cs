@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text.Json;
 using AutoMapper;
 using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Models;
@@ -33,7 +34,7 @@ public class VillaApiController : ControllerBase
     
     [HttpGet]
     [ResponseCache(CacheProfileName = "Default30")]
-    public async Task<ActionResult<ApiResponse>> GetVillas([FromQuery(Name = "Search")] string? search)
+    public async Task<ActionResult<ApiResponse>> GetVillas([FromQuery(Name = "Search")] string? search, int pageSize = 2, int pageNumber = 1)
     {
         try
         {
@@ -51,13 +52,15 @@ public class VillaApiController : ControllerBase
             // }
             
             // filtro facendo la chiamata completa e poi filtrando i dati in cache 
-            villaList = await _dbVilla.GetAll();
+            villaList = await _dbVilla.GetAll(pageSize: pageSize, pageNumber: pageNumber);
 
             if (!string.IsNullOrEmpty(search))
             {
                 villaList = villaList.Where(q => q.Name.ToLower().Contains(search));
             }
-            
+
+            Pagination pagination = new() { PageNumber = pageNumber, PageSize = pageSize };
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
             _response.Result = _mapper.Map<List<VillaDto>>(villaList);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
