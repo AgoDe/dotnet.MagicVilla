@@ -1,27 +1,27 @@
 using MagicVilla_VillaAPI.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI.Data;
 
-public class ApplicationDbContext: DbContext
+public class ApplicationDbContext: IdentityDbContext<ApplicationUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
     {
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
-    
-    public DbSet<LocalUser> LocalUsers { get; set; }
-    public DbSet<Villa> Villas { set; get; }
-    public DbSet<VillaNumber> VillaNumbers { set; get; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.Entity<Villa>().HasData(
             new Villa
-            { 
-                Id=1,
+            {
+                Id = 1,
                 Name = "Royal Villa",
-                Details = "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
+                Details =
+                    "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                 ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa3.jpg",
                 Occupancy = 4,
                 Rate = 200,
@@ -31,21 +31,23 @@ public class ApplicationDbContext: DbContext
             },
             new Villa
             {
-              Id = 2,
-              Name = "Premium Pool Villa",
-              Details = "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-              ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa1.jpg",
-              Occupancy = 4,
-              Rate = 300,
-              Sqft = 550,
-              Amenity="",
-              CreatedDate = DateTime.UtcNow
-          },
+                Id = 2,
+                Name = "Premium Pool Villa",
+                Details =
+                    "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
+                ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa1.jpg",
+                Occupancy = 4,
+                Rate = 300,
+                Sqft = 550,
+                Amenity = "",
+                CreatedDate = DateTime.UtcNow
+            },
             new Villa
             {
                 Id = 3,
                 Name = "Luxury Pool Villa",
-                Details = "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
+                Details =
+                    "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                 ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa4.jpg",
                 Occupancy = 4,
                 Rate = 400,
@@ -57,7 +59,8 @@ public class ApplicationDbContext: DbContext
             {
                 Id = 4,
                 Name = "Diamond Villa",
-                Details = "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
+                Details =
+                    "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                 ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa5.jpg",
                 Occupancy = 4,
                 Rate = 550,
@@ -69,7 +72,8 @@ public class ApplicationDbContext: DbContext
             {
                 Id = 5,
                 Name = "Diamond Pool Villa",
-                Details = "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
+                Details =
+                    "Fusce 11 tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                 ImageUrl = "https://dotnetmasteryimages.blob.core.windows.net/bluevillaimages/villa2.jpg",
                 Occupancy = 4,
                 Rate = 600,
@@ -79,4 +83,9 @@ public class ApplicationDbContext: DbContext
             }
         );
     }
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<LocalUser> LocalUsers { get; set; }
+    public DbSet<Villa> Villas { set; get; }
+    public DbSet<VillaNumber> VillaNumbers { set; get; }
+    
 }

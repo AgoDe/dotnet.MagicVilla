@@ -1,9 +1,11 @@
 using System.Text;
 using MagicVilla_VillaAPI;
 using MagicVilla_VillaAPI.Data;
+using MagicVilla_VillaAPI.Models;
 using MagicVilla_VillaAPI.Repository;
 using MagicVilla_VillaAPI.Repository.IRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -26,7 +28,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
-SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true); // da inserire per abilitare il formato data usato da posgres
+
+// setting dell'identity 
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 // setting della cache
